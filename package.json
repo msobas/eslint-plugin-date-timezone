@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-date-timezone",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "This plugin won't allow to use Date with short string",
   "keywords": [
     "eslint",
@@ -22,5 +22,18 @@
   "engines": {
     "node": ">=0.10.0"
   },
-  "license": "ISC"
+  "license": "GPL-3.0",
+  "directories": {
+    "doc": "docs",
+    "lib": "lib",
+    "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/msobas/eslint-plugin-date-timezone.git"
+  },
+  "bugs": {
+    "url": "https://github.com/msobas/eslint-plugin-date-timezone/issues"
+  },
+  "homepage": "https://github.com/msobas/eslint-plugin-date-timezone#readme"
 }
