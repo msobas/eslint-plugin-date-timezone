@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-date-timezone",
-  "version": "0.1.3",
+  "version": "0.1.5",
   "description": "This plugin won't allow to use Date with short string",
   "keywords": [
     "eslint",

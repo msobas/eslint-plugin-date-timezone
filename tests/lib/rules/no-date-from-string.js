@@ -29,6 +29,7 @@ ruleTester.run("eslint-plugin-date-timezone", rule, {
     "new Date()",
     "Date(1577833200000)",
     "new Date(2020, 0, 1)",
+    "Date('2020-01-01')", // does not check CallExpression
   ],
 
   invalid: [
@@ -36,8 +37,8 @@ ruleTester.run("eslint-plugin-date-timezone", rule, {
       code: 'new Date("2020-01-01")',
       errors: [
         {
-          message: "Please provide full date string with time included.",
-          type: "ExpressionStatement",
+          message: "Please don't use Date with string values",
+          type: "NewExpression",
         },
       ],
     },
@@ -45,8 +46,17 @@ ruleTester.run("eslint-plugin-date-timezone", rule, {
       code: 'new Date("2020-01-01T00:00:00")',
       errors: [
         {
-          message: "Please provide full date string with time included.",
-          type: "ExpressionStatement",
+          message: "Please don't use Date with string values",
+          type: "NewExpression",
+        },
+      ],
+    },
+    {
+      code: 'const localisedDate = new Date("2020-01-01");',
+      errors: [
+        {
+          message: "Please don't use Date with string values",
+          type: "NewExpression",
         },
       ],
     },
