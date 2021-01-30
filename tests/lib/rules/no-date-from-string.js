@@ -1,5 +1,5 @@
 /**
- * @fileoverview This rule won&#39;t allow to use Date with short string
+ * @fileoverview This rule will not allow to create new Date with string argument
  * @author Mateusz Sobas
  */
 "use strict";
@@ -22,6 +22,13 @@ RuleTester.setDefaultConfig({
 // Tests
 //------------------------------------------------------------------------------
 
+var expectedErrors = [
+  {
+    message: "Please don't use Date with string values",
+    type: "NewExpression",
+  },
+],
+
 var ruleTester = new RuleTester();
 ruleTester.run("eslint-plugin-date-timezone", rule, {
   valid: [
@@ -35,30 +42,15 @@ ruleTester.run("eslint-plugin-date-timezone", rule, {
   invalid: [
     {
       code: 'new Date("2020-01-01")',
-      errors: [
-        {
-          message: "Please don't use Date with string values",
-          type: "NewExpression",
-        },
-      ],
+      errors: expectedErrors,
     },
     {
       code: 'new Date("2020-01-01T00:00:00")',
-      errors: [
-        {
-          message: "Please don't use Date with string values",
-          type: "NewExpression",
-        },
-      ],
+      errors: expectedErrors,
     },
     {
       code: 'const localisedDate = new Date("2020-01-01");',
-      errors: [
-        {
-          message: "Please don't use Date with string values",
-          type: "NewExpression",
-        },
-      ],
+      errors: expectedErrors,
     },
   ],
 });
