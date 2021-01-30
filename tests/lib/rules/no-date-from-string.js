@@ -8,8 +8,15 @@
 // Requirements
 //------------------------------------------------------------------------------
 
-var rule = require("../../../lib/rules/eslint-plugin-date-timezone"),
+var rule = require("../../../lib/rules/no-date-from-string"),
   RuleTester = require("eslint").RuleTester;
+
+RuleTester.setDefaultConfig({
+  parserOptions: {
+    ecmaVersion: 6,
+    sourceType: "module",
+  },
+});
 
 //------------------------------------------------------------------------------
 // Tests
