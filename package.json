@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-date-timezone",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "This plugin allows to validate usage of Date to work appriopriatly with timezones",
   "keywords": [
     "eslint",
