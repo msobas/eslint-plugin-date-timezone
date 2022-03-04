@@ -36,6 +36,7 @@ ruleTester.run("eslint-plugin-date-timezone", rule, {
     "new Date()",
     "new Date(1577833200000)",
     "new Date(2020, 0, 1)",
+    "const number = 1577833200000; const date = new Date(number);",
     "Date('2020-01-01')", // does not check CallExpression
   ],
 
@@ -50,6 +51,10 @@ ruleTester.run("eslint-plugin-date-timezone", rule, {
     },
     {
       code: "const localisedDate = new Date('2020-01-01');",
+      errors: expectedErrors,
+    },
+    {
+      code: "const str = '2020-01-01'; const date = new Date(str);", //
       errors: expectedErrors,
     },
   ],
